@@ -1,0 +1,49 @@
+### Target ###
+/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/idea
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### Dependancy caches ###
+/node_modules
+/packages
+!.mvn/wrapper/maven-wrapper.jar
+
+### Compiled code ###
+*.o
+*.pyc
+*.class
+
+### Build output Directories ###
+/bin
+/out
+
+### Files generated at runtime ###
+*.log
+*.lock
+*.tmp
+
+### Ignore hidden system files ###
+.DS_Store
+Thumbs.db
