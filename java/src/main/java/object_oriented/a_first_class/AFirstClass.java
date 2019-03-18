@@ -1,9 +1,12 @@
-package objectOriented.aFirstClass;
+package object_oriented.a_first_class;
 
 //Il n'est pas necessaire de faire les imports de classe situés dans le même package
 
 public class AFirstClass {
     public AFirstClass() {
+        //Coloration de la sortie terminal
+        System.out.print("\u001B[31m");
+
         //Constructeur standard sans param
         Ville v = new Ville();
 

@@ -1,17 +1,17 @@
-package objectOriented.aFirstClass;
+package object_oriented.a_first_class;
 
 public class Ville {
     //Variables d'instances
 
-    private String nomVille; //nom de la ville
-    private String nomPays; //nom du pays
-    private int nbreHabitants; //nombre d'habitants de la ville
-    private char categorie; //categorie de la ville fonction du nombre d'habitants
+    protected String nomVille; //nom de la ville
+    protected String nomPays; //nom du pays
+    protected int nbreHabitants; //nombre d'habitants de la ville
+    protected char categorie; //categorie de la ville fonction du nombre d'habitants
 
     //Variables de classe, communes et identiques à toutes les instances
 
     public static int nbreInstances = 0; //Compte le nombre d'instances
-    private static int nbreInstancesBis = 0; //Compte le nombre d'instances de manière privée
+    protected static int nbreInstancesBis = 0; //Compte le nombre d'instances de manière privée
 
     public Ville() {
         //On incrémente nos variables à chaque appel aux constructeurs
@@ -121,6 +121,75 @@ public class Ville {
             str = this.nomVille+" est une ville plus peuplée que "+v1.getNom();
 
         return str;
+    }
+
+    @Override
+    public String toString() {
+        return "Ville{" +
+                "nomVille='" + nomVille + '\'' +
+                ", nomPays='" + nomPays + '\'' +
+                ", nbreHabitants=" + nbreHabitants +
+                ", categorie=" + categorie +
+                '}';
+    }
+
+    //Hashcode and equals
+    public int hashCode() {
+        //On définit un multiplication impair, de préférence un nombre premier
+        //Ceci afin de garantir l'unicité du résultat final
+        final int prime = 31;
+        //On définit un résultat qui sera renvoyé au final
+        int result = 1;
+        //On ajoute en eux la multiplication des attributs et du multiplicateur
+        result = prime * result + categorie;
+        result = prime * result + nbreHabitants;
+        //Lorsque vous devez gérer des hashcodes avec des objets dans le mode de calcul
+        //Vous devez vérifier si l'objet n'est pas null, sinon vous aurez une erreur
+        result = prime * result + ((nomPays == null) ? 0 : nomPays.hashCode());
+        //si le nom est null on obtient le nombre 31, le hashcode du pays ne s'enclenche pas
+        result = prime * result + ((nomVille == null) ? 0 : nomVille.hashCode());
+        //si le nom est null on obtient le nombre 31, le hashcode de ville ne s'enclenche pas
+        return result;
+    }
+
+    public boolean equals(Object obj) {
+        //On vérifie si les références d'objets sont identiques
+        if (this == obj)
+            return true;
+
+        //On vérifie si l'objet passé en paramètre est null
+        if (obj == null)
+            return false;
+
+        //On s'assure que les objets sont du même type, ici de type Ville
+        //La méthode getClass retourne un objet Class qui représente la classe de votre objet
+        //Nous verrons ça un peu plus tard...
+        if (getClass() != obj.getClass())
+            return false;
+
+        //Maintenant, on compare les attributs de nos objets
+        Ville other = (Ville) obj;
+        if (categorie != other.categorie)
+            return false;
+        if (nbreHabitants != other.nbreHabitants)
+            return false;
+        if (nomPays == null) {
+            if (other.nomPays != null)
+                return false;
+        }
+        else if (!nomPays.equals(other.nomPays))
+            return false;
+
+        if (nomVille == null) {
+            if (other.nomVille != null)
+                return false;
+        }
+        else if (!nomVille.equals(other.nomVille))
+            return false;
+        //Si on est arrivé tout au bout sans retourner de false, c'est que tous
+        //les attributs sont identiques
+
+        return true;
     }
 }
 
