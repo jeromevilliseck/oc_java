@@ -50,5 +50,7 @@ public class AFirstClass {
         //Statisme
         System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.nbreInstances);
         System.out.println("Le nombre d'instances de la classe Ville est : " + Ville.getNombreInstancesBis());
+
+        System.out.println();
     }
 }

@@ -10,14 +10,15 @@ public abstract class Animal {
     public void boire(){
         System.out.println("animal boit");
     }
-    abstract void deplacement(); //Comportement indefinissable pour un animal
-    abstract void crier();
+    public abstract void deplacement(); //Comportement indefinissable pour un animal
+    public abstract void crier();
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "je suis un Animal{" +
                 "poids=" + poids +
                 ", couleur='" + couleur + '\'' +
-                '}';
+                '}' +
+                " classe -> " + this.getClass();
     }
 }

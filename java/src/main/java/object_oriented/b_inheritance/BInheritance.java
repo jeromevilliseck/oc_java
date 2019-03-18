@@ -53,7 +53,5 @@ public class BInheritance {
         } //vous transtypez la référence v en Ville;
         //vous appliquez la méthodedecrisToi()à la référence appelante,
         // c'est-à-dire, ici, une référenceObjectchangée enVille.
-
-
     }
 }
