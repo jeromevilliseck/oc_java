@@ -73,6 +73,7 @@ public class EAbstractAndInterface {
         }
 
         System.out.println();
+        System.out.println();
 
         System.out.print("\u001B[36m");
 
