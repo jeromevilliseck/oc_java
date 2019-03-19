@@ -1,9 +1,9 @@
 package object_oriented.e_abstract_and_interface.strategy_pattern.without_pattern;
 
 public abstract class Personnage {
-    public String armes;
-    public String chaussures;
-    public String sacDeSoin;
+    public String armes = "";
+    public String chaussures = "";
+    public String sacDeSoin = "";
 
     public void seDeplacer(){
         System.out.println("Je me déplace à pied.");
